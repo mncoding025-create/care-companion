@@ -374,6 +374,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      accept_emergency_job: {
+        Args: { p_booking_id: string; p_companion_id: string }
+        Returns: boolean
+      }
       is_admin: { Args: never; Returns: boolean }
     }
     Enums: {
