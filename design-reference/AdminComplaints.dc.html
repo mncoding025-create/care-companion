@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    :root{
+      --bg-cream:#FBF7EE; --mint:#E4F3EA; --sky:#E7F2FA; --ink:#2C2A24; --sub:#5B584D;
+      --primary:#2F7A68; --primary-dark:#1F5C4E; --accent:#E38B6B; --card:#FFFFFF; --border:#E5DFCE; --danger:#C1544A;
+    }
+    body{margin:0;font-family:'Sarabun',sans-serif;background:var(--bg-cream);color:var(--ink);}
+    .navlink{font-size:16px;font-weight:600;color:#cfe6de;text-decoration:none;padding:12px 16px;border-radius:12px;display:flex;align-items:center;gap:12px;}
+    .navlink.active{color:#fff;background:rgba(255,255,255,0.12);}
+    .card{background:#fff;border-radius:18px;border:1px solid var(--border);}
+    .badge{font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;}
+    .btn-sm{font-size:14px;font-weight:700;padding:10px 18px;border-radius:10px;border:none;cursor:pointer;}
+  </style>
+</helmet>
+<div style="width:1440px;min-height:1024px;box-sizing:border-box;display:flex;">
+
+  <div style="width:250px;background:var(--primary-dark);padding:28px 18px;display:flex;flex-direction:column;gap:6px;">
+    <div style="display:flex;align-items:center;gap:10px;padding:0 8px 24px;">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7.5-4.6-10-9.3C.5 8 2.2 4.5 5.6 4c2-.3 3.8.6 5 2 1.2-1.4 3-2.3 5-2 3.4.5 5.1 4 3.6 7.7C19.5 16.4 12 21 12 21z" fill="#E38B6B"/></svg>
+      <span style="font-size:18px;font-weight:800;color:#fff;">Care Companion</span>
+    </div>
+    <div style="font-size:13px;font-weight:700;color:#a9c9bf;padding:8px 16px;">ADMIN</div>
+    <a href="AdminDashboard.dc.html" class="navlink">📊 ภาพรวมระบบ</a>
+    <a href="AdminUsers.dc.html" class="navlink">👥 จัดการผู้ใช้งาน</a>
+    <a href="AdminComplaints.dc.html" class="navlink active">⚠️ ข้อร้องเรียน</a>
+  </div>
+
+  <div style="flex:1;padding:40px 56px;display:flex;gap:32px;">
+    <div style="flex:1;max-width:760px;display:flex;flex-direction:column;gap:20px;">
+      <div style="font-size:30px;font-weight:800;">ข้อร้องเรียน / ปัญหา</div>
+
+      <div class="card" style="padding:24px;border-left:6px solid var(--danger);display:flex;flex-direction:column;gap:10px;cursor:pointer;">
+        <div style="display:flex;justify-content:space-between;">
+          <span style="font-size:18px;font-weight:800;">มาช้ากว่านัดหมาย 40 นาที</span>
+          <span class="badge" style="background:#FBEAE7;color:var(--danger);">ด่วน</span>
+        </div>
+        <div style="font-size:15px;color:var(--sub);">จาก: คุณสมศรี ใจดี · เกี่ยวกับ: คุณวิชัย รักดี · 16 ก.ย. 2569</div>
+      </div>
+
+      <div class="card" style="padding:24px;border-left:6px solid var(--accent);display:flex;flex-direction:column;gap:10px;cursor:pointer;">
+        <div style="display:flex;justify-content:space-between;">
+          <span style="font-size:18px;font-weight:800;">ผู้ช่วยพูดจาไม่สุภาพ</span>
+          <span class="badge" style="background:#FCEFE6;color:#B36A3F;">รอตรวจสอบ</span>
+        </div>
+        <div style="font-size:15px;color:var(--sub);">จาก: คุณประไพ ทองดี · เกี่ยวกับ: คุณสมพร ใจงาม · 14 ก.ย. 2569</div>
+      </div>
+
+      <div class="card" style="padding:24px;display:flex;flex-direction:column;gap:10px;cursor:pointer;">
+        <div style="display:flex;justify-content:space-between;">
+          <span style="font-size:18px;font-weight:800;">ยกเลิกงานกะทันหัน</span>
+          <span class="badge" style="background:#F1F1E8;color:var(--sub);">แก้ไขแล้ว</span>
+        </div>
+        <div style="font-size:15px;color:var(--sub);">จาก: คุณอรุณ พันธ์ดี · เกี่ยวกับ: คุณมานี ศรีสุข · 10 ก.ย. 2569</div>
+      </div>
+    </div>
+
+    <div style="width:440px;">
+      <div class="card" style="padding:32px;display:flex;flex-direction:column;gap:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:20px;font-weight:800;">รายละเอียดข้อร้องเรียน</span>
+          <span class="badge" style="background:#FBEAE7;color:var(--danger);">ด่วน</span>
+        </div>
+        <div style="font-size:16px;line-height:1.8;color:var(--sub);">
+          <b style="color:var(--ink);">ลูกค้า:</b> คุณสมศรี ใจดี<br>
+          <b style="color:var(--ink);">ผู้ช่วย:</b> คุณวิชัย รักดี<br>
+          <b style="color:var(--ink);">การจอง:</b> #BK-10245 พาไปหาหมอ<br>
+          <b style="color:var(--ink);">วันที่แจ้ง:</b> 16 ก.ย. 2569, 11:05 น.
+        </div>
+        <div style="background:var(--bg-cream);border-radius:14px;padding:18px;font-size:16px;line-height:1.7;">
+          "ผู้ช่วยมาสายมาก โทรก็ไม่รับ ทำให้ไปถึงคลินิกไม่ทันเวลานัด กังวลมากค่ะ"
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px;">
+          <button class="btn-sm" style="background:var(--primary);color:#fff;min-height:52px;">ติดต่อทั้งสองฝ่าย</button>
+          <button class="btn-sm" style="background:#fff;border:2px solid var(--border);min-height:52px;">บันทึกว่าแก้ไขแล้ว</button>
+          <button class="btn-sm" style="background:#fff;color:var(--danger);border:2px solid #F3D5CE;min-height:52px;">ระงับผู้ช่วยชั่วคราว</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":1024}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    :root{
+      --bg-cream:#FBF7EE; --mint:#E4F3EA; --sky:#E7F2FA; --ink:#2C2A24; --sub:#5B584D;
+      --primary:#2F7A68; --primary-dark:#1F5C4E; --accent:#E38B6B; --card:#FFFFFF; --border:#E5DFCE; --danger:#C1544A;
+    }
+    body{margin:0;font-family:'Sarabun',sans-serif;background:var(--bg-cream);color:var(--ink);}
+    .card{background:#fff;border-radius:20px;border:1px solid var(--border);}
+    .step{display:flex;align-items:flex-start;gap:16px;}
+    .dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;}
+    .btn-call{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;border-radius:16px;background:var(--primary);color:#fff;font-size:18px;font-weight:700;border:none;cursor:pointer;}
+    .btn-cancel{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;border-radius:16px;background:#fff;color:var(--danger);border:2px solid var(--danger);font-size:18px;font-weight:700;cursor:pointer;}
+    .btn-back{display:flex;align-items:center;gap:8px;font-size:17px;font-weight:700;color:var(--sub);text-decoration:none;}
+  </style>
+</helmet>
+<div style="width:1440px;min-height:1024px;box-sizing:border-box;display:flex;justify-content:center;padding:48px 24px;">
+  <div style="width:760px;display:flex;flex-direction:column;gap:24px;">
+
+    <a href="CustomerDashboard.dc.html" class="btn-back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#5B584D" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>กลับหน้าแรก</a>
+
+    <div style="font-size:30px;font-weight:800;">ติดตามสถานะการเดินทาง</div>
+
+    <div class="card" style="background:var(--mint);border:none;padding:28px 32px;display:flex;align-items:center;gap:20px;">
+      <div style="width:60px;height:60px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;">🚗</div>
+      <div style="flex:1;">
+        <div style="font-size:22px;font-weight:800;color:var(--primary-dark);">ผู้ช่วยกำลังเดินทางมารับคุณ</div>
+        <div style="font-size:17px;color:var(--primary-dark);margin-top:4px;">คาดว่าจะถึงใน 8 นาที</div>
+      </div>
+    </div>
+
+    <div class="card" style="padding:28px 32px;display:flex;align-items:center;gap:20px;">
+      <div style="width:72px;height:72px;border-radius:50%;background:var(--sky);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;color:var(--primary-dark);">วช</div>
+      <div style="flex:1;">
+        <div style="font-size:20px;font-weight:800;">คุณวิชัย รักดี</div>
+        <div style="font-size:16px;color:var(--sub);">⭐ 4.9 · รถยนต์สีขาว ทะเบียน กข 1234</div>
+      </div>
+      <div style="display:flex;gap:12px;">
+        <button class="btn-call" style="min-height:52px;padding:0 20px;">📞 โทร</button>
+        <button class="btn-call" style="min-height:52px;padding:0 20px;background:#fff;color:var(--primary);border:2px solid var(--primary);">💬 แชท</button>
+      </div>
+    </div>
+
+    <div class="card" style="padding:32px;display:flex;flex-direction:column;gap:24px;">
+      <div style="font-size:20px;font-weight:800;">รายละเอียดการเดินทาง</div>
+      <div class="step">
+        <div class="dot" style="background:var(--primary);color:#fff;">✓</div>
+        <div>
+          <div style="font-size:18px;font-weight:700;">ยืนยันการจองแล้ว</div>
+          <div style="font-size:15px;color:var(--sub);">09:20 น.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="dot" style="background:var(--accent);color:#fff;">🚗</div>
+        <div>
+          <div style="font-size:18px;font-weight:700;">ผู้ช่วยกำลังเดินทางมารับ</div>
+          <div style="font-size:15px;color:var(--sub);">จุดรับ: บ้านคุณสมศรี — ซอยลาดพร้าว 15</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="dot" style="background:var(--border);color:var(--sub);">⏳</div>
+        <div>
+          <div style="font-size:18px;font-weight:700;color:var(--sub);">ถึงจุดหมาย</div>
+          <div style="font-size:15px;color:var(--sub);">โรงพยาบาลศิริราช อาคารผู้ป่วยนอก</div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-cancel">ยกเลิกการจอง</button>
+  </div>
+</div>
+
+<div style="position:fixed;right:32px;bottom:32px;z-index:50;display:flex;flex-direction:column;align-items:center;gap:8px;">
+  <sc-if value="{{holding}}" hint-placeholder-val="{{false}}">
+    <div style="background:#fff;color:#B3261E;font-size:14px;font-weight:700;padding:8px 14px;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,0.14);white-space:nowrap;">กดค้างไว้อีก {{holdLabel}} วิ...</div>
+  </sc-if>
+  <div onMouseDown="{{startHold}}" onMouseUp="{{cancelHold}}" onMouseLeave="{{cancelHold}}" onTouchStart="{{startHold}}" onTouchEnd="{{cancelHold}}" style="width:88px;height:88px;border-radius:50%;background:conic-gradient(#7A1F17 {{holdDeg}}deg, #EFA69B {{holdDeg}}deg); display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 24px rgba(179,38,30,0.38);">
+    <div style="width:74px;height:74px;border-radius:50%;background:#E5433A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2l1.6 4.8L18 8l-4.4 1.6L12 14l-1.6-4.4L6 8l4.4-1.2L12 2z" fill="#fff"/><path d="M4 21c1-4 4-7 8-7s7 3 8 7" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      <span style="color:#fff;font-size:12px;font-weight:800;">ช่วยด่วน</span>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":1024}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { holding: false, progress: 0 };
+    this.startHold = this.startHold.bind(this);
+    this.cancelHold = this.cancelHold.bind(this);
+  }
+  startHold() {
+    if (this._timer) return;
+    const started = Date.now();
+    this.setState({ holding: true, progress: 0 });
+    this._timer = setInterval(() => {
+      const pct = Math.min(1, (Date.now() - started) / 1200);
+      this.setState({ progress: pct });
+      if (pct >= 1) {
+        clearInterval(this._timer);
+        this._timer = null;
+        window.location.href = 'EmergencyConfirm.dc.html';
+      }
+    }, 40);
+  }
+  cancelHold() {
+    if (this._timer) { clearInterval(this._timer); this._timer = null; }
+    this.setState({ holding: false, progress: 0 });
+  }
+  renderVals() {
+    return {
+      holding: this.state.holding,
+      holdDeg: Math.round(this.state.progress * 360),
+      holdLabel: (1.2 - this.state.progress * 1.2).toFixed(1)
+    };
+  }
+}
+</script>
+</body>
+</html>

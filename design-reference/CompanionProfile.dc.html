@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    :root{
+      --bg-cream:#FBF7EE; --mint:#E4F3EA; --sky:#E7F2FA; --ink:#2C2A24; --sub:#5B584D;
+      --primary:#2F7A68; --primary-dark:#1F5C4E; --accent:#E38B6B; --card:#FFFFFF; --border:#E5DFCE;
+    }
+    body{margin:0;font-family:'Sarabun',sans-serif;background:var(--bg-cream);color:var(--ink);}
+    .navlink{font-size:17px;font-weight:600;color:var(--sub);text-decoration:none;padding:10px 16px;border-radius:12px;display:flex;align-items:center;gap:12px;}
+    .navlink.active{color:var(--primary-dark);background:var(--mint);}
+    .card{background:#fff;border-radius:20px;border:1px solid var(--border);}
+    label{font-size:17px;font-weight:700;display:block;margin-bottom:8px;}
+    input,textarea{width:100%;box-sizing:border-box;font-family:'Sarabun',sans-serif;font-size:17px;padding:14px 16px;border-radius:14px;border:2px solid var(--border);background:#fff;color:var(--ink);}
+    .chip{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:var(--primary-dark);font-weight:700;font-size:15px;padding:8px 14px;border-radius:999px;}
+    .day{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;border:2px solid var(--border);}
+    .day.on{background:var(--primary);color:#fff;border-color:var(--primary);}
+    .btn-primary{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;border-radius:16px;background:var(--primary);color:#fff;font-size:18px;font-weight:700;border:none;box-shadow:0 4px 0 var(--primary-dark);cursor:pointer;padding:0 28px;}
+  </style>
+</helmet>
+<div style="width:1440px;min-height:1024px;box-sizing:border-box;display:flex;">
+
+  <div style="width:260px;background:#fff;border-right:1px solid var(--border);padding:32px 20px;display:flex;flex-direction:column;gap:8px;">
+    <div style="display:flex;align-items:center;gap:10px;padding:0 8px 28px;">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7.5-4.6-10-9.3C.5 8 2.2 4.5 5.6 4c2-.3 3.8.6 5 2 1.2-1.4 3-2.3 5-2 3.4.5 5.1 4 3.6 7.7C19.5 16.4 12 21 12 21z" fill="#E38B6B"/></svg>
+      <span style="font-size:20px;font-weight:800;color:var(--primary-dark);">Care Companion</span>
+    </div>
+    <a href="CompanionJobs.dc.html" class="navlink">📋 งานที่เข้ามา</a>
+    <a href="CompanionJobs.dc.html" class="navlink">🚗 งานปัจจุบัน</a>
+    <a href="CompanionProfile.dc.html" class="navlink active">👤 โปรไฟล์ของฉัน</a>
+  </div>
+
+  <div style="flex:1;padding:40px 56px;display:flex;flex-direction:column;gap:24px;max-width:900px;">
+    <div style="font-size:30px;font-weight:800;">โปรไฟล์ของฉัน</div>
+
+    <div class="card" style="padding:32px;display:flex;gap:24px;align-items:center;">
+      <div style="width:96px;height:96px;border-radius:50%;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:800;color:var(--primary-dark);">วช</div>
+      <div style="flex:1;">
+        <div style="font-size:22px;font-weight:800;">คุณวิชัย รักดี</div>
+        <div style="font-size:16px;color:var(--sub);margin-top:4px;">⭐ 4.9 · รับงานแล้ว 128 ครั้ง</div>
+      </div>
+      <span class="chip">✓ ยืนยันตัวตนแล้ว</span>
+    </div>
+
+    <div class="card" style="padding:32px;display:flex;flex-direction:column;gap:24px;">
+      <div style="font-size:20px;font-weight:800;">ข้อมูลทั่วไป</div>
+      <div>
+        <label>ประสบการณ์ / ความสามารถพิเศษ</label>
+        <textarea rows="3">ชำนาญพาผู้สูงอายุไปโรงพยาบาล ช่วยเข็นรถวีลแชร์ได้ พูดจาสุภาพใจเย็น มีประสบการณ์ 3 ปี</textarea>
+      </div>
+      <div>
+        <label>พื้นที่ให้บริการ</label>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <span class="chip">บางกอกน้อย ✕</span>
+          <span class="chip">บางพลัด ✕</span>
+          <span class="chip" style="background:#fff;border:2px dashed var(--border);color:var(--sub);">+ เพิ่มพื้นที่</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="padding:32px;display:flex;flex-direction:column;gap:20px;">
+      <div style="font-size:20px;font-weight:800;">ช่วงเวลาที่ว่างรับงาน</div>
+      <div style="display:flex;gap:12px;">
+        <div class="day on">จ</div><div class="day on">อ</div><div class="day on">พ</div><div class="day on">พฤ</div><div class="day on">ศ</div><div class="day">ส</div><div class="day">อา</div>
+      </div>
+      <div style="display:flex;gap:16px;">
+        <div style="flex:1;"><label>เวลาเริ่ม</label><input type="text" value="08:00 น."></div>
+        <div style="flex:1;"><label>เวลาสิ้นสุด</label><input type="text" value="17:00 น."></div>
+      </div>
+    </div>
+
+    <button class="btn-primary" style="align-self:flex-end;">บันทึกข้อมูล</button>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":1024}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

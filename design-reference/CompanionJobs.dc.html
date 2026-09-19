@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    :root{
+      --bg-cream:#FBF7EE; --mint:#E4F3EA; --sky:#E7F2FA; --ink:#2C2A24; --sub:#5B584D;
+      --primary:#2F7A68; --primary-dark:#1F5C4E; --accent:#E38B6B; --card:#FFFFFF; --border:#E5DFCE; --danger:#C1544A;
+    }
+    body{margin:0;font-family:'Sarabun',sans-serif;background:var(--bg-cream);color:var(--ink);}
+    .navlink{font-size:17px;font-weight:600;color:var(--sub);text-decoration:none;padding:10px 16px;border-radius:12px;display:flex;align-items:center;gap:12px;}
+    .navlink.active{color:var(--primary-dark);background:var(--mint);}
+    .card{background:#fff;border-radius:20px;border:1px solid var(--border);}
+    .btn-accept{flex:1;min-height:56px;border-radius:14px;background:var(--primary);color:#fff;font-size:17px;font-weight:700;border:none;cursor:pointer;}
+    .btn-decline{flex:1;min-height:56px;border-radius:14px;background:#fff;color:var(--danger);border:2px solid var(--danger);font-size:17px;font-weight:700;cursor:pointer;}
+    .btn-nav{min-height:52px;border-radius:14px;font-size:16px;font-weight:700;border:none;padding:0 22px;cursor:pointer;}
+  </style>
+</helmet>
+<div style="width:1440px;min-height:1024px;box-sizing:border-box;display:flex;">
+
+  <div style="width:260px;background:#fff;border-right:1px solid var(--border);padding:32px 20px;display:flex;flex-direction:column;gap:8px;">
+    <div style="display:flex;align-items:center;gap:10px;padding:0 8px 28px;">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7.5-4.6-10-9.3C.5 8 2.2 4.5 5.6 4c2-.3 3.8.6 5 2 1.2-1.4 3-2.3 5-2 3.4.5 5.1 4 3.6 7.7C19.5 16.4 12 21 12 21z" fill="#E38B6B"/></svg>
+      <span style="font-size:20px;font-weight:800;color:var(--primary-dark);">Care Companion</span>
+    </div>
+    <a href="CompanionJobs.dc.html" class="navlink active">📋 งานที่เข้ามา</a>
+    <a href="CompanionJobs.dc.html" class="navlink">🚗 งานปัจจุบัน</a>
+    <a href="CompanionProfile.dc.html" class="navlink">👤 โปรไฟล์ของฉัน</a>
+  </div>
+
+  <div style="flex:1;padding:40px 56px;display:flex;gap:40px;">
+    <div style="flex:1;max-width:640px;display:flex;flex-direction:column;gap:24px;">
+      <div style="font-size:30px;font-weight:800;">งานที่เข้ามาใหม่</div>
+
+      <div class="card" style="padding:26px;border:3px solid var(--danger,#B3261E);position:relative;display:flex;flex-direction:column;gap:16px;background:#FFFBFA;">
+        <div style="position:absolute;top:-14px;left:20px;background:var(--danger,#B3261E);color:#fff;font-size:14px;font-weight:800;padding:6px 14px;border-radius:999px;box-shadow:0 3px 8px rgba(179,38,30,0.3);">🔴 ด่วน</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+          <span style="font-size:19px;font-weight:800;">🏥 พาไปหาหมอ (คำขอฉุกเฉิน)</span>
+        </div>
+        <div style="font-size:16px;color:var(--sub);line-height:1.7;">
+          📅 วันนี้ ทันที<br>
+          📍 จาก: บ้านคุณสมศรี ซอยลาดพร้าว 15<br>
+          🏁 ถึง: โรงพยาบาลศิริราช<br>
+          👤 ลูกค้า: คุณสมศรี ใจดี (ต้องการพยุงเดิน)
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;background:#FBEAE7;border-radius:14px;padding:12px 18px;">
+          <span style="font-size:15px;font-weight:700;color:var(--danger,#B3261E);">เหลือเวลาตอบรับ</span>
+          <span style="font-size:26px;font-weight:800;color:var(--danger,#B3261E);letter-spacing:1px;">2:45 นาที</span>
+        </div>
+        <div style="display:flex;gap:12px;">
+          <button class="btn-accept" style="min-height:64px;font-size:19px;background:var(--danger,#B3261E);">รับงานนี้</button>
+          <button class="btn-decline">ปฏิเสธ</button>
+        </div>
+      </div>
+
+      <div class="card" style="padding:26px;display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:19px;font-weight:800;">🛒 ไปจ่ายตลาด</span>
+          <span style="font-size:15px;color:var(--sub);">วันเสาร์นี้ 09:00 น.</span>
+        </div>
+        <div style="font-size:16px;color:var(--sub);line-height:1.7;">
+          📍 จาก: บ้านคุณประไพ ถนนสุขุมวิท<br>
+          🏁 ถึง: ตลาดสดคลองเตย
+        </div>
+        <div style="display:flex;gap:12px;">
+          <button class="btn-accept">รับงานนี้</button>
+          <button class="btn-decline">ปฏิเสธ</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="width:400px;display:flex;flex-direction:column;gap:20px;">
+      <div style="font-size:22px;font-weight:800;">สถานะงานปัจจุบัน</div>
+      <div class="card" style="padding:26px;display:flex;flex-direction:column;gap:16px;background:var(--mint);border:none;">
+        <span style="font-size:15px;font-weight:700;color:var(--primary-dark);">🚗 กำลังเดินทางไปรับลูกค้า</span>
+        <div style="font-size:18px;font-weight:800;">คุณสมศรี ใจดี</div>
+        <div style="font-size:15px;color:var(--primary-dark);">พาไปโรงพยาบาลศิริราช · 10:00 น.</div>
+        <div style="display:flex;gap:10px;">
+          <button class="btn-nav" style="background:#fff;color:var(--primary-dark);flex:1;">📞 โทรหาลูกค้า</button>
+        </div>
+        <button class="btn-nav" style="background:var(--primary);color:#fff;">✓ ถึงจุดรับแล้ว</button>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":1024}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

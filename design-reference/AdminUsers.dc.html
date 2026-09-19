@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    :root{
+      --bg-cream:#FBF7EE; --mint:#E4F3EA; --sky:#E7F2FA; --ink:#2C2A24; --sub:#5B584D;
+      --primary:#2F7A68; --primary-dark:#1F5C4E; --accent:#E38B6B; --card:#FFFFFF; --border:#E5DFCE; --danger:#C1544A;
+    }
+    body{margin:0;font-family:'Sarabun',sans-serif;background:var(--bg-cream);color:var(--ink);}
+    .navlink{font-size:16px;font-weight:600;color:#cfe6de;text-decoration:none;padding:12px 16px;border-radius:12px;display:flex;align-items:center;gap:12px;}
+    .navlink.active{color:#fff;background:rgba(255,255,255,0.12);}
+    .card{background:#fff;border-radius:18px;border:1px solid var(--border);}
+    .tab{font-size:16px;font-weight:700;padding:12px 20px;border-radius:12px;color:var(--sub);cursor:pointer;}
+    .tab.active{background:var(--primary);color:#fff;}
+    .btn-sm{font-size:14px;font-weight:700;padding:8px 16px;border-radius:10px;border:2px solid var(--border);background:#fff;cursor:pointer;}
+    .badge{font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;}
+  </style>
+</helmet>
+<div style="width:1440px;min-height:1024px;box-sizing:border-box;display:flex;">
+
+  <div style="width:250px;background:var(--primary-dark);padding:28px 18px;display:flex;flex-direction:column;gap:6px;">
+    <div style="display:flex;align-items:center;gap:10px;padding:0 8px 24px;">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7.5-4.6-10-9.3C.5 8 2.2 4.5 5.6 4c2-.3 3.8.6 5 2 1.2-1.4 3-2.3 5-2 3.4.5 5.1 4 3.6 7.7C19.5 16.4 12 21 12 21z" fill="#E38B6B"/></svg>
+      <span style="font-size:18px;font-weight:800;color:#fff;">Care Companion</span>
+    </div>
+    <div style="font-size:13px;font-weight:700;color:#a9c9bf;padding:8px 16px;">ADMIN</div>
+    <a href="AdminDashboard.dc.html" class="navlink">📊 ภาพรวมระบบ</a>
+    <a href="AdminUsers.dc.html" class="navlink active">👥 จัดการผู้ใช้งาน</a>
+    <a href="AdminComplaints.dc.html" class="navlink">⚠️ ข้อร้องเรียน</a>
+  </div>
+
+  <div style="flex:1;padding:40px 56px;display:flex;flex-direction:column;gap:24px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <div style="font-size:30px;font-weight:800;">จัดการผู้ใช้งาน</div>
+      <input type="text" placeholder="🔍 ค้นหาชื่อ หรือ เบอร์โทร" style="width:320px;font-family:'Sarabun',sans-serif;font-size:16px;padding:12px 16px;border-radius:12px;border:2px solid var(--border);">
+    </div>
+
+    <div style="display:flex;gap:10px;">
+      <div class="tab active">ลูกค้า (4,230)</div>
+      <div class="tab">ผู้ช่วยเดินทาง (1,200)</div>
+      <div class="tab">รออนุมัติ (18)</div>
+    </div>
+
+    <div class="card" style="overflow:hidden;">
+      <div style="display:flex;padding:16px 28px;background:var(--bg-cream);font-size:15px;font-weight:700;color:var(--sub);">
+        <div style="width:260px;">ชื่อ</div><div style="width:180px;">เบอร์โทร</div><div style="width:140px;">จำนวนครั้งที่ใช้</div><div style="width:140px;">สถานะ</div><div style="flex:1;">จัดการ</div>
+      </div>
+      <div style="display:flex;align-items:center;padding:18px 28px;border-top:1px solid var(--border);font-size:16px;">
+        <div style="width:260px;display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:50%;background:var(--mint);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary-dark);">สม</div>คุณสมศรี ใจดี</div>
+        <div style="width:180px;color:var(--sub);">081-234-5678</div>
+        <div style="width:140px;">24 ครั้ง</div>
+        <div style="width:140px;"><span class="badge" style="background:var(--mint);color:var(--primary-dark);">ใช้งานอยู่</span></div>
+        <div style="flex:1;display:flex;gap:8px;"><button class="btn-sm">ดูโปรไฟล์</button><button class="btn-sm" style="color:var(--danger);border-color:#F3D5CE;">ระงับ</button></div>
+      </div>
+      <div style="display:flex;align-items:center;padding:18px 28px;border-top:1px solid var(--border);font-size:16px;">
+        <div style="width:260px;display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:50%;background:var(--sky);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary-dark);">ปร</div>คุณประไพ ทองดี</div>
+        <div style="width:180px;color:var(--sub);">089-876-5432</div>
+        <div style="width:140px;">12 ครั้ง</div>
+        <div style="width:140px;"><span class="badge" style="background:var(--mint);color:var(--primary-dark);">ใช้งานอยู่</span></div>
+        <div style="flex:1;display:flex;gap:8px;"><button class="btn-sm">ดูโปรไฟล์</button><button class="btn-sm" style="color:var(--danger);border-color:#F3D5CE;">ระงับ</button></div>
+      </div>
+      <div style="display:flex;align-items:center;padding:18px 28px;border-top:1px solid var(--border);font-size:16px;">
+        <div style="width:260px;display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:50%;background:#F1F1E8;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--sub);">อร</div>คุณอรุณ พันธ์ดี</div>
+        <div style="width:180px;color:var(--sub);">062-345-1122</div>
+        <div style="width:140px;">3 ครั้ง</div>
+        <div style="width:140px;"><span class="badge" style="background:#FBEAE7;color:var(--danger);">ถูกระงับ</span></div>
+        <div style="flex:1;display:flex;gap:8px;"><button class="btn-sm">ดูโปรไฟล์</button><button class="btn-sm" style="color:var(--primary);border-color:var(--mint);">ยกเลิกระงับ</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":1024}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    :root{
+      --bg-cream:#FBF7EE; --mint:#E4F3EA; --sky:#E7F2FA; --ink:#2C2A24; --sub:#5B584D;
+      --primary:#2F7A68; --primary-dark:#1F5C4E; --accent:#E38B6B; --card:#FFFFFF; --border:#E5DFCE;
+    }
+    body{margin:0;font-family:'Sarabun',sans-serif;background:var(--sky);color:var(--ink);}
+    .btn-google{display:flex;align-items:center;justify-content:center;gap:14px;width:100%;min-height:60px;border-radius:16px;background:#fff;border:2px solid var(--border);font-size:19px;font-weight:700;color:var(--ink);cursor:pointer;}
+    .btn-google:active{transform:scale(0.98);}
+  </style>
+</helmet>
+<div style="width:1440px;height:1024px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;">
+  <div style="width:520px;background:#fff;border-radius:28px;box-shadow:0 20px 50px rgba(44,42,36,0.10);padding:56px 48px;display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <svg width="52" height="52" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7.5-4.6-10-9.3C.5 8 2.2 4.5 5.6 4c2-.3 3.8.6 5 2 1.2-1.4 3-2.3 5-2 3.4.5 5.1 4 3.6 7.7C19.5 16.4 12 21 12 21z" fill="#E38B6B"/></svg>
+    <div style="font-size:26px;font-weight:800;color:var(--primary-dark);margin-top:4px;">Care Companion</div>
+    <div style="font-size:18px;color:var(--sub);margin-bottom:24px;">เข้าสู่ระบบเพื่อเริ่มใช้งาน</div>
+
+    <button class="btn-google">
+      <svg width="24" height="24" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.9-.1-1.5-.2-2.2H12v4.2h6.5c-.1 1.1-.9 2.7-2.6 3.8l4 3.1c2.4-2.2 3.6-5.4 3.6-8.9z"/><path fill="#34A853" d="M12 24c3.2 0 5.9-1.1 7.9-2.8l-4-3.1c-1.1.7-2.4 1.2-3.9 1.2-3 0-5.5-2-6.4-4.7l-4.1 3.2C3.5 21.5 7.4 24 12 24z"/><path fill="#FBBC05" d="M5.6 14.6c-.2-.7-.4-1.4-.4-2.1s.1-1.4.4-2.1L1.5 7.2C.7 8.7.2 10.3.2 12s.5 3.3 1.3 4.8l4.1-3.2z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.2.6 4.4 1.8l3.3-3.3C17.9 1.3 15.2.2 12 .2 7.4.2 3.5 2.7 1.5 6.2l4.1 3.2c.9-2.7 3.4-4.6 6.4-4.6z"/></svg>
+      <span>เข้าสู่ระบบด้วย Google</span>
+    </button>
+
+    <div style="font-size:15px;color:var(--sub);text-align:center;line-height:1.7;margin-top:20px;">
+      เพื่อความปลอดภัย เราใช้บัญชี Google ของคุณในการยืนยันตัวตน<br>ไม่ต้องจำรหัสผ่านใหม่
+    </div>
+
+    <div style="width:100%;height:1px;background:var(--border);margin:28px 0;"></div>
+
+    <div style="font-size:16px;color:var(--sub);text-align:center;">
+      ยังไม่มีบัญชี? การเข้าสู่ระบบครั้งแรกจะสร้างบัญชีให้อัตโนมัติ
+    </div>
+    <a href="Landing.dc.html" style="margin-top:20px;font-size:17px;font-weight:700;color:var(--primary);text-decoration:none;display:flex;align-items:center;gap:8px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#2F7A68" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      กลับหน้าแรก
+    </a>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":1024}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
