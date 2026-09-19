@@ -53,7 +53,7 @@ export function BookingFormClient({
   }
 
   return (
-    <div className="flex justify-center px-6 py-12">
+    <div className="flex justify-center px-4 py-8 md:px-6 md:py-12">
       <div className="w-full max-w-[760px] flex flex-col gap-6">
         <Link
           href="/dashboard"
@@ -87,7 +87,7 @@ export function BookingFormClient({
           <div className="flex-1 h-2 rounded-full bg-border" />
         </div>
 
-        <div className="bg-card border border-border rounded-[20px] p-9 flex flex-col gap-7">
+        <div className="bg-card border border-border rounded-[20px] p-5 md:p-9 flex flex-col gap-7">
           <div>
             <label className="text-lg font-bold block mb-2.5">
               ประเภทธุระ

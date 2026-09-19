@@ -141,9 +141,9 @@ export function CompanionJobsClient({
   const visibleRegularJobs = regularJobs.filter((j) => !dismissed.has(j.id));
 
   return (
-    <div className="flex-1 px-14 py-10 flex gap-10">
+    <div className="flex-1 px-5 py-6 md:px-14 md:py-10 flex flex-col lg:flex-row gap-6 lg:gap-10 pb-24 md:pb-10">
       <div className="flex-1 max-w-[640px] flex flex-col gap-6">
-        <div className="text-[30px] font-extrabold text-ink">งานที่เข้ามาใหม่</div>
+        <div className="text-[26px] md:text-[30px] font-extrabold text-ink">งานที่เข้ามาใหม่</div>
 
         {toast && (
           <div className="bg-mint text-primary-dark font-semibold text-sm px-4 py-3 rounded-xl">
@@ -250,7 +250,7 @@ export function CompanionJobsClient({
         )}
       </div>
 
-      <div className="w-[400px] flex flex-col gap-5">
+      <div className="w-full lg:w-[400px] flex flex-col gap-5">
         <div className="text-[22px] font-extrabold">สถานะงานปัจจุบัน</div>
 
         {currentJobs.length === 0 && (

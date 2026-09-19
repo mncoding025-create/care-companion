@@ -88,10 +88,10 @@ export function CompanionProfileClient({
   }
 
   return (
-    <div className="flex-1 px-14 py-10 flex flex-col gap-6 max-w-[900px]">
-      <div className="text-[30px] font-extrabold text-ink">โปรไฟล์ของฉัน</div>
+    <div className="flex-1 px-5 py-6 md:px-14 md:py-10 flex flex-col gap-6 max-w-[900px] pb-24 md:pb-10">
+      <div className="text-[26px] md:text-[30px] font-extrabold text-ink">โปรไฟล์ของฉัน</div>
 
-      <div className="bg-card border border-border rounded-[20px] p-8 flex gap-6 items-center">
+      <div className="bg-card border border-border rounded-[20px] p-5 md:p-8 flex flex-wrap gap-5 md:gap-6 items-center">
         <div className="w-24 h-24 rounded-full bg-mint flex items-center justify-center text-[34px] font-extrabold text-primary-dark shrink-0">
           {initials(fullName)}
         </div>
@@ -112,7 +112,7 @@ export function CompanionProfileClient({
         </span>
       </div>
 
-      <div className="bg-card border border-border rounded-[20px] p-8 flex flex-col gap-6">
+      <div className="bg-card border border-border rounded-[20px] p-5 md:p-8 flex flex-col gap-6">
         <div className="text-xl font-extrabold text-ink">ข้อมูลทั่วไป</div>
         <div>
           <label className="text-[17px] font-bold block mb-2">
@@ -168,11 +168,11 @@ export function CompanionProfileClient({
         </div>
       </div>
 
-      <div className="bg-card border border-border rounded-[20px] p-8 flex flex-col gap-5">
+      <div className="bg-card border border-border rounded-[20px] p-5 md:p-8 flex flex-col gap-5">
         <div className="text-xl font-extrabold text-ink">
           ช่วงเวลาที่ว่างรับงาน
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-2 md:gap-3">
           {dayOptions.map((d) => {
             const on = availableDays.includes(d.value);
             return (

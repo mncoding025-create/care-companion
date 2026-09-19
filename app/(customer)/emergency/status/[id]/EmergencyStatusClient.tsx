@@ -108,7 +108,7 @@ export function EmergencyStatusClient({
   const isCancelled = booking.status === "cancelled";
 
   return (
-    <div className="flex justify-center px-6 py-8 bg-bg-cream min-h-screen">
+    <div className="flex justify-center px-4 py-6 md:px-6 md:py-8 bg-bg-cream min-h-screen">
       <div className="w-full max-w-[720px] flex flex-col items-center gap-7 pt-6">
         <div className="flex items-center gap-2 bg-warm-red text-danger font-extrabold text-sm px-4 py-2 rounded-full">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
@@ -165,14 +165,14 @@ export function EmergencyStatusClient({
         )}
 
         {showCallSuggestion && !found && !isCancelled && (
-          <div className="w-full bg-card border-2 border-danger rounded-2xl px-5.5 py-4.5 flex items-center gap-4">
+          <div className="w-full bg-card border-2 border-danger rounded-2xl px-4 py-4 md:px-5.5 md:py-4.5 flex flex-col sm:flex-row sm:items-center gap-4">
             <div className="flex-1 text-sm text-sub leading-relaxed">
               ยังไม่มีผู้ช่วยตอบรับคำขอของคุณ หากเป็นเหตุฉุกเฉินทางการแพทย์
               แนะนำให้โทรแจ้งหน่วยกู้ชีพโดยตรง
             </div>
             <a
               href="tel:1669"
-              className="flex items-center gap-2 bg-danger text-white font-extrabold text-lg px-5.5 py-3.5 rounded-2xl shrink-0 no-underline"
+              className="flex items-center justify-center gap-2 bg-danger text-white font-extrabold text-lg px-5.5 py-3.5 rounded-2xl shrink-0 no-underline w-full sm:w-auto"
             >
               โทร 1669
             </a>

@@ -49,9 +49,9 @@ export default async function CustomerDashboardPage() {
     <div className="flex min-h-screen">
       <Sidebar active="dashboard" fullName={fullName} />
 
-      <div className="flex-1 px-14 py-10 flex flex-col gap-8">
+      <div className="flex-1 px-5 py-6 md:px-14 md:py-10 flex flex-col gap-8 pb-24 md:pb-10">
         <div>
-          <div className="text-[30px] font-extrabold text-ink">
+          <div className="text-[26px] md:text-[30px] font-extrabold text-ink">
             สวัสดีค่ะ คุณ{firstName(fullName)} 👋
           </div>
           <div className="text-lg text-sub mt-1.5">
@@ -74,7 +74,7 @@ export default async function CustomerDashboardPage() {
           เรียกผู้ช่วยเดินทาง
         </Link>
 
-        <div className="bg-card border border-border rounded-[20px] px-8 py-7 flex items-center gap-6 border-l-[6px] border-l-primary">
+        <div className="bg-card border border-border rounded-[20px] px-5 py-6 md:px-8 md:py-7 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 border-l-[6px] border-l-primary">
           <div className="w-14 h-14 rounded-2xl bg-mint flex items-center justify-center shrink-0">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
               <path
@@ -122,12 +122,12 @@ export default async function CustomerDashboardPage() {
 
         <div>
           <div className="text-[22px] font-extrabold mb-4">บริการของเรา</div>
-          <div className="flex gap-6">
+          <div className="grid grid-cols-2 md:flex gap-4 md:gap-6">
             {serviceCards.map((type) => (
               <Link
                 key={type}
                 href={`/book?service=${type}`}
-                className="flex-1 bg-card border border-border rounded-2xl p-6 flex flex-col gap-3 items-center text-center no-underline text-inherit"
+                className="md:flex-1 bg-card border border-border rounded-2xl p-5 md:p-6 flex flex-col gap-2 md:gap-3 items-center text-center no-underline text-inherit"
               >
                 <div className="text-4xl">{serviceTypeIcon(type)}</div>
                 <div className="text-lg font-bold text-ink">

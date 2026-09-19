@@ -79,7 +79,7 @@ export function CompanionSearchClient({
   }
 
   return (
-    <div className="flex justify-center px-6 py-12">
+    <div className="flex justify-center px-4 py-8 md:px-6 md:py-12">
       <div className="w-full max-w-[900px] flex flex-col gap-6">
         <Link
           href="/book"
@@ -124,7 +124,7 @@ export function CompanionSearchClient({
           return (
             <div
               key={c.profileId}
-              className={`bg-card rounded-[20px] p-7 flex gap-6 items-center border-2 ${
+              className={`bg-card rounded-[20px] p-5 md:p-7 flex flex-col sm:flex-row gap-4 md:gap-6 sm:items-center border-2 ${
                 selected
                   ? "border-primary shadow-[0_0_0_4px_var(--mint)]"
                   : "border-border"
@@ -159,7 +159,7 @@ export function CompanionSearchClient({
               </div>
               <button
                 onClick={() => setSelectedId(c.profileId)}
-                className={`min-h-[52px] rounded-2xl text-[17px] font-bold border-none cursor-pointer px-6 ${
+                className={`min-h-[52px] rounded-2xl text-[17px] font-bold border-none cursor-pointer px-6 w-full sm:w-auto ${
                   selected
                     ? "bg-primary text-white"
                     : "bg-card text-primary border-2 border-primary"

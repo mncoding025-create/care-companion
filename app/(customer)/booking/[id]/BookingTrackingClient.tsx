@@ -69,7 +69,7 @@ export function BookingTrackingClient({
   const isCancelled = booking.status === "cancelled";
 
   return (
-    <div className="flex justify-center px-6 py-12">
+    <div className="flex justify-center px-4 py-8 md:px-6 md:py-12">
       <div className="w-full max-w-[760px] flex flex-col gap-6">
         <Link
           href="/dashboard"
@@ -92,7 +92,7 @@ export function BookingTrackingClient({
           ติดตามสถานะการเดินทาง
         </div>
 
-        <div className="bg-mint rounded-[20px] px-8 py-7 flex items-center gap-5">
+        <div className="bg-mint rounded-[20px] px-5 py-6 md:px-8 md:py-7 flex items-center gap-4 md:gap-5">
           <div className="w-[60px] h-[60px] rounded-full bg-white flex items-center justify-center text-[28px] shrink-0">
             {isCompleted ? "✅" : isCancelled ? "🚫" : booking.companion_id ? "🚗" : "⏳"}
           </div>
@@ -112,7 +112,7 @@ export function BookingTrackingClient({
         </div>
 
         {companion && !isCancelled && (
-          <div className="bg-card border border-border rounded-[20px] px-8 py-7 flex items-center gap-5">
+          <div className="bg-card border border-border rounded-[20px] px-5 py-6 md:px-8 md:py-7 flex items-center gap-4 md:gap-5">
             <div className="w-[72px] h-[72px] rounded-full bg-sky shrink-0 flex items-center justify-center text-[26px] font-extrabold text-primary-dark">
               {initials(companion.full_name)}
             </div>
@@ -135,7 +135,7 @@ export function BookingTrackingClient({
           </div>
         )}
 
-        <div className="bg-card border border-border rounded-[20px] p-8 flex flex-col gap-6">
+        <div className="bg-card border border-border rounded-[20px] p-5 md:p-8 flex flex-col gap-6">
           <div className="text-xl font-extrabold text-ink">
             รายละเอียดการเดินทาง
           </div>

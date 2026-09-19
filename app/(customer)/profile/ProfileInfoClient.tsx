@@ -43,8 +43,8 @@ export function ProfileInfoClient({
 
   if (editing) {
     return (
-      <div className="bg-card border border-border rounded-[20px] p-8 flex flex-col gap-5">
-        <div className="flex gap-4">
+      <div className="bg-card border border-border rounded-[20px] p-5 md:p-8 flex flex-col gap-5">
+        <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <label className="text-base font-bold block mb-2">ชื่อ-นามสกุล</label>
             <input
@@ -96,12 +96,12 @@ export function ProfileInfoClient({
   }
 
   return (
-    <div className="bg-card border border-border rounded-[20px] p-8 flex gap-6 items-center">
-      <div className="w-24 h-24 rounded-full bg-mint flex items-center justify-center text-[34px] font-extrabold text-primary-dark shrink-0">
+    <div className="bg-card border border-border rounded-[20px] p-5 md:p-8 flex flex-wrap gap-5 md:gap-6 items-center">
+      <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-mint flex items-center justify-center text-[28px] md:text-[34px] font-extrabold text-primary-dark shrink-0">
         {initials(fullName)}
       </div>
-      <div className="flex-1">
-        <div className="text-[22px] font-extrabold text-ink">คุณ{fullName}</div>
+      <div className="flex-1 min-w-[180px]">
+        <div className="text-xl md:text-[22px] font-extrabold text-ink">คุณ{fullName}</div>
         <div className="text-base text-sub mt-1">
           {phone ? `${phone} · ` : ""}ใช้บริการมาแล้ว {completedCount} ครั้ง
         </div>

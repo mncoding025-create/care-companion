@@ -51,9 +51,17 @@ export async function updateSession(request: NextRequest) {
   if (user) {
     const { data: profile } = await supabase
       .from("profiles")
-      .select("role")
+      .select("role, is_active")
       .eq("id", user.id)
       .single();
+
+    if (profile && !profile.is_active && !isPublicPath) {
+      await supabase.auth.signOut();
+      const url = request.nextUrl.clone();
+      url.pathname = "/login";
+      url.searchParams.set("error", "suspended");
+      return NextResponse.redirect(url);
+    }
 
     const home = profile ? roleHome[profile.role] : "/login";
 

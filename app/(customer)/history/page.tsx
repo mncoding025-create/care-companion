@@ -29,8 +29,8 @@ export default async function BookingHistoryPage() {
     <div className="flex min-h-screen">
       <Sidebar active="history" fullName={fullName} />
 
-      <div className="flex-1 px-14 py-10 flex flex-col gap-6">
-        <div className="text-[30px] font-extrabold text-ink">
+      <div className="flex-1 px-5 py-6 md:px-14 md:py-10 flex flex-col gap-5 md:gap-6 pb-24 md:pb-10">
+        <div className="text-[26px] md:text-[30px] font-extrabold text-ink">
           ประวัติการใช้บริการ
         </div>
 
@@ -46,45 +46,49 @@ export default async function BookingHistoryPage() {
           return (
             <div
               key={b.id}
-              className="bg-card border border-border rounded-[20px] px-7 py-6 flex items-center gap-6"
+              className="bg-card border border-border rounded-[20px] px-5 py-5 md:px-7 md:py-6 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6"
             >
-              <div
-                className={`w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl shrink-0 ${
-                  isCancelled ? "bg-warm-red" : "bg-mint"
-                }`}
-              >
-                {serviceTypeIcon(b.service_type)}
-              </div>
-              <div className="flex-1">
-                <div className="text-lg font-bold text-ink">
-                  {serviceTypeLabel(b.service_type)}
+              <div className="flex items-center gap-4 flex-1">
+                <div
+                  className={`w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-2xl shrink-0 ${
+                    isCancelled ? "bg-warm-red" : "bg-mint"
+                  }`}
+                >
+                  {serviceTypeIcon(b.service_type)}
                 </div>
-                <div className="text-sm text-sub mt-1">
-                  {formatBookingDate(b.scheduled_date)}
-                  {isCancelled
-                    ? " · ยกเลิกโดยผู้ใช้"
-                    : b.companion
-                    ? ` · กับคุณ${firstName(b.companion.full_name)}`
-                    : ""}
+                <div className="flex-1">
+                  <div className="text-lg font-bold text-ink">
+                    {serviceTypeLabel(b.service_type)}
+                  </div>
+                  <div className="text-sm text-sub mt-1">
+                    {formatBookingDate(b.scheduled_date)}
+                    {isCancelled
+                      ? " · ยกเลิกโดยผู้ใช้"
+                      : b.companion
+                      ? ` · กับคุณ${firstName(b.companion.full_name)}`
+                      : ""}
+                  </div>
                 </div>
               </div>
-              <span
-                className={`text-sm font-bold px-3.5 py-1.5 rounded-full ${
-                  isDone
-                    ? "bg-mint text-primary-dark"
+              <div className="flex items-center justify-between sm:justify-end gap-4 pl-[68px] sm:pl-0">
+                <span
+                  className={`text-sm font-bold px-3.5 py-1.5 rounded-full whitespace-nowrap ${
+                    isDone
+                      ? "bg-mint text-primary-dark"
+                      : isCancelled
+                      ? "bg-warm-red text-danger"
+                      : "bg-sky text-primary-dark"
+                  }`}
+                >
+                  {isDone
+                    ? "เสร็จสิ้น"
                     : isCancelled
-                    ? "bg-warm-red text-danger"
-                    : "bg-sky text-primary-dark"
-                }`}
-              >
-                {isDone
-                  ? "เสร็จสิ้น"
-                  : isCancelled
-                  ? "ยกเลิกแล้ว"
-                  : "กำลังดำเนินการ"}
-              </span>
-              <div className="text-lg font-bold w-[90px] text-right text-ink">
-                {b.price ? `฿${b.price}` : <span className="text-sub">—</span>}
+                    ? "ยกเลิกแล้ว"
+                    : "กำลังดำเนินการ"}
+                </span>
+                <div className="text-lg font-bold sm:w-[90px] text-right text-ink">
+                  {b.price ? `฿${b.price}` : <span className="text-sub">—</span>}
+                </div>
               </div>
             </div>
           );

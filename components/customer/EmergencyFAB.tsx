@@ -43,7 +43,7 @@ export function EmergencyFAB() {
   const holdLabel = (HOLD_MS / 1000 - progress * (HOLD_MS / 1000)).toFixed(1);
 
   return (
-    <div className="fixed right-8 bottom-8 z-50 flex flex-col items-center gap-2">
+    <div className="fixed right-4 md:right-8 bottom-20 md:bottom-8 z-50 flex flex-col items-center gap-2">
       {holding && (
         <div className="bg-white text-danger text-sm font-bold px-3.5 py-2 rounded-xl shadow-lg whitespace-nowrap">
           กดค้างไว้อีก {holdLabel} วิ...

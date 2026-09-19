@@ -27,13 +27,26 @@ function GoogleIcon() {
   );
 }
 
-export function LoginCard({ role }: { role: "customer" | "companion" }) {
+const errorMessages: Record<string, string> = {
+  suspended: "บัญชีนี้ถูกระงับการใช้งาน กรุณาติดต่อทีมสนับสนุน",
+  auth: "เข้าสู่ระบบไม่สำเร็จ กรุณาลองใหม่อีกครั้ง",
+};
+
+export function LoginCard({
+  role,
+  initialError,
+}: {
+  role: "customer" | "companion";
+  initialError?: string;
+}) {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(
+    initialError ? errorMessages[initialError] ?? errorMessages.auth : ""
+  );
 
   async function handleGoogleLogin() {
     setLoading(true);
-    setError(false);
+    setError("");
     // signInWithOAuth has no `data` option to stamp user_metadata, so the
     // chosen role rides along in a short-lived cookie the callback route reads.
     document.cookie = `pending_role=${role}; path=/; max-age=600; samesite=lax`;
@@ -45,7 +58,7 @@ export function LoginCard({ role }: { role: "customer" | "companion" }) {
       },
     });
     if (error) {
-      setError(true);
+      setError(errorMessages.auth);
       setLoading(false);
     }
   }
@@ -73,9 +86,7 @@ export function LoginCard({ role }: { role: "customer" | "companion" }) {
       </button>
 
       {error && (
-        <p className="text-danger text-base text-center m-0">
-          เข้าสู่ระบบไม่สำเร็จ กรุณาลองใหม่อีกครั้ง
-        </p>
+        <p className="text-danger text-base text-center m-0">{error}</p>
       )}
 
       <Link

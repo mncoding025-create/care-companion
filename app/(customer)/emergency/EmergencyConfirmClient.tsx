@@ -124,9 +124,9 @@ export function EmergencyConfirmClient({
   }
 
   return (
-    <div className="flex justify-center px-6 py-8 bg-bg-cream min-h-screen">
+    <div className="flex justify-center px-4 py-6 md:px-6 md:py-8 bg-bg-cream min-h-screen">
       <div className="w-full max-w-[820px] flex flex-col gap-5">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <button
             onClick={() => router.push("/dashboard")}
             className="flex items-center gap-2 text-[17px] font-bold text-sub bg-transparent border-none cursor-pointer p-0"
@@ -329,13 +329,13 @@ export function EmergencyConfirmClient({
           ยืนยัน ขอความช่วยเหลือทันที
         </button>
 
-        <div className="bg-card border-2 border-border rounded-2xl px-5.5 py-4.5 flex items-center gap-4">
+        <div className="bg-card border-2 border-border rounded-2xl px-4 py-4 md:px-5.5 md:py-4.5 flex flex-col sm:flex-row sm:items-center gap-4">
           <svg
             width="24"
             height="24"
             viewBox="0 0 24 24"
             fill="none"
-            className="shrink-0"
+            className="shrink-0 hidden sm:block"
           >
             <path
               d="M12 9v4m0 4h.01M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"
@@ -353,7 +353,7 @@ export function EmergencyConfirmClient({
           </div>
           <a
             href="tel:1669"
-            className="flex items-center gap-2 bg-danger text-white font-extrabold text-lg px-5.5 py-3.5 rounded-2xl shrink-0 no-underline"
+            className="flex items-center justify-center gap-2 bg-danger text-white font-extrabold text-lg px-5.5 py-3.5 rounded-2xl shrink-0 no-underline w-full sm:w-auto"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path

@@ -106,7 +106,7 @@ export function EmergencyContactsClient({
 
   return (
     <>
-      <div className="bg-card border-2 border-warm-red rounded-[20px] p-8 flex flex-col gap-5">
+      <div className="bg-card border-2 border-warm-red rounded-[20px] p-5 md:p-8 flex flex-col gap-5">
         <div className="flex items-center gap-3">
           <div className="w-11 h-11 rounded-xl bg-warm-red flex items-center justify-center shrink-0">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
@@ -130,12 +130,12 @@ export function EmergencyContactsClient({
         {contacts.map((c) => (
           <div
             key={c.id}
-            className="border-2 border-border rounded-2xl px-5 py-5 flex items-center gap-4.5"
+            className="border-2 border-border rounded-2xl px-4 py-4 md:px-5 md:py-5 flex flex-wrap items-center gap-3 md:gap-4.5"
           >
             <div className="w-[52px] h-[52px] rounded-full bg-sky shrink-0 flex items-center justify-center text-lg font-extrabold text-primary-dark">
               {initials(c.name)}
             </div>
-            <div className="flex-1">
+            <div className="flex-1 min-w-[140px]">
               <div className="text-lg font-bold text-ink">{c.name}</div>
               <div className="text-sm text-sub">
                 {c.relationship ? `${c.relationship} · ` : ""}
@@ -162,11 +162,11 @@ export function EmergencyContactsClient({
         )}
       </div>
 
-      <div className="bg-card border border-border rounded-[20px] p-8 flex flex-col gap-5">
+      <div className="bg-card border border-border rounded-[20px] p-5 md:p-8 flex flex-col gap-5">
         <div className="text-xl font-extrabold text-ink">
           {editingId ? "แก้ไขผู้ติดต่อฉุกเฉิน" : "เพิ่มผู้ติดต่อฉุกเฉิน"}
         </div>
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <label className="text-base font-bold block mb-2">
               ชื่อ-นามสกุล

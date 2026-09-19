@@ -35,8 +35,8 @@ export default async function CustomerProfilePage() {
     <div className="flex min-h-screen">
       <Sidebar active="profile" fullName={fullName} />
 
-      <div className="flex-1 px-14 py-10 flex flex-col gap-6 max-w-[900px]">
-        <div className="text-[30px] font-extrabold text-ink">
+      <div className="flex-1 px-5 py-6 md:px-14 md:py-10 flex flex-col gap-6 max-w-[900px] pb-24 md:pb-10">
+        <div className="text-[26px] md:text-[30px] font-extrabold text-ink">
           โปรไฟล์ของฉัน
         </div>
 
